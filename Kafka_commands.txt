@@ -1,0 +1,25 @@
+#Check that you already have kafka-python else
+pip install kafka-python
+# Download and Extract Kafka
+wget https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz
+tar -xvf kafka_2.12-3.3.1.tgz
+cd kafka_2.12-3.3.1
+
+# Start Zookeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# Start Kafka Server
+# Ensure that 'advertised.listeners' in 'config/server.properties' is updated with the public IP of your EC2 instance
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+bin/kafka-server-start.sh config/server.properties
+
+# Create Kafka Topic
+# Replace '{Put the Public IP of your EC2 Instance}' with the actual public IP of your EC2 instance
+bin/kafka-topics.sh --create --topic demo_test --bootstrap-server {Put the Public IP of your EC2 Instance:9092} --replication-factor 1 --partitions 1
+
+# Run Kafka Producer (Python)
+# Execute the Kafka producer Python script with the necessary configurations.
+
+# Start Kafka Consumer
+# Replace '{Put the Public IP of your EC2 Instance}' with the actual public IP of your EC2 instance
+bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server {Put the Public IP of your EC2 Instance:9092}
