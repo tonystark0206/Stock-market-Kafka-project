@@ -8,6 +8,7 @@ Throughout this project, we'll leverage Python programming, Amazon Web Services 
 
 
 Technologies Utilized
+
 Programming Language: Python
 Amazon Web Services (AWS):
 S3 (Simple Storage Service): For storing raw and processed data.
@@ -18,9 +19,11 @@ EC2: Used for hosting Kafka, allowing scalability and high availability.
 Apache Kafka: Distributed streaming platform for building real-time data pipelines and applications.
 
 Dataset Considerations
+
 While you can utilize any dataset for this project, our primary focus lies in the operational aspect of data engineering, specifically in constructing a robust and efficient data pipeline.
 
 Comprehensive Video Tutorial
+
 For a detailed walkthrough of this project, including step-by-step instructions and explanations, please refer to the complete video tutorial available at:
 
 https://youtu.be/KerNf0NANMo?si=gUkQOcCZ7YJPwCSj
