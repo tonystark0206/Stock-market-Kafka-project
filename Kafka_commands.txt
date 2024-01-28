@@ -13,6 +13,9 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
 bin/kafka-server-start.sh config/server.properties
 
+#Open another window to start kafka
+#But first ssh to to your ec2 machine as done above
+
 # Create Kafka Topic
 # Replace '{Put the Public IP of your EC2 Instance}' with the actual public IP of your EC2 instance
 bin/kafka-topics.sh --create --topic demo_test --bootstrap-server {Put the Public IP of your EC2 Instance:9092} --replication-factor 1 --partitions 1
